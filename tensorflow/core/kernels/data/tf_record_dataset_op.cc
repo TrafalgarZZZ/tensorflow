@@ -199,6 +199,13 @@ class TFRecordDatasetOp::Dataset : public DatasetBase {
             " >= filenames_.size():", dataset()->filenames_.size());
       }
 
+      size_t totalFiles = dataset()->filenames_.size();
+      for (int i = 0;i < totalFiles;i++) {
+          LOG(INFO) << "TFRECORD DATASET LIST: " << " INDEX: " << i << ", FILENAME: " << dataset()->filenames_[i];
+      }
+
+      LOG(INFO) << "CURRENTLY READING: " << " INDEX: " << current_file_index_ << ", FILENAME: " << dataset()->filenames_[current_file_index_]
+
       // Actually move on to next file.
       const string& next_filename = dataset()->filenames_[current_file_index_];
       TF_RETURN_IF_ERROR(env->NewRandomAccessFile(next_filename, &file_));
