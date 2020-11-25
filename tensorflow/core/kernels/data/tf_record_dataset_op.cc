@@ -204,7 +204,7 @@ class TFRecordDatasetOp::Dataset : public DatasetBase {
           LOG(INFO) << "TFRECORD DATASET LIST: " << " INDEX: " << i << ", FILENAME: " << dataset()->filenames_[i];
       }
 
-      LOG(INFO) << "CURRENTLY READING: " << " INDEX: " << current_file_index_ << ", FILENAME: " << dataset()->filenames_[current_file_index_]
+      LOG(INFO) << "CURRENTLY READING: " << " INDEX: " << current_file_index_ << ", FILENAME: " << dataset()->filenames_[current_file_index_];
 
       // Actually move on to next file.
       const string& next_filename = dataset()->filenames_[current_file_index_];
